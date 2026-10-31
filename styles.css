@@ -53,7 +53,7 @@
     --focus-offset: 2px;
 
     /* COMPONENT-SPECIFIC */
-    --aside-nav: ;
+    --aside-nav-height: 2.5rem;
   }
 
   body {
@@ -208,7 +208,7 @@
     font-family: var(--body-font);
   }
 
-  form input, form textarea {
+  .form-field {
     font-size: var(--font-size-base);
     font-family: var(--body-font);
   }
@@ -225,7 +225,13 @@
   }
 
   .aside-nav-list {
+    list-style: none;
+    line-height: var(--aside-nav-height);
+  }
 
+  .aside-nav-list a{
+    text-decoration: none;
+    color: var(--medium-blue);
   }
 }
 
@@ -268,6 +274,13 @@
 
   button:hover {
     cursor: pointer;
+    background-color: var(--frost-blue);
+    box-shadow: var(--dark-bg-shadow);
+  }
+
+  .nav-list a:hover {
+    color: var(--icy-blue);
+    text-decoration: underline;
   }
 }
 
