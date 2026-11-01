@@ -1,6 +1,6 @@
-@layer reset, base, layout, components, utilities, state, overrides;
-
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Hairline&family=Saira+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@layer reset, base, layout, components, utilities, state, overrides;
 
 @layer reset {
   *,
@@ -24,6 +24,7 @@
     --medium-blue: #4f81aa;
     --dark-blue: #143d5b;
     --midnight: #030b19;
+    --warning: #880808;
 
     /* TYPE */
     --heading-font: "Bungee Hairline", Lucida, Monospace;
@@ -46,6 +47,7 @@
 
     --dark-bg-shadow: 2px 2px 4px var(--frost-blue);
     --border-radius: 16px;
+    --button-radius: 6px;
 
     /* FOCUS */
     --focus-color: #91c9e2;
@@ -53,7 +55,7 @@
     --focus-offset: 2px;
 
     /* COMPONENT-SPECIFIC */
-    --aside-nav-height: 2.5rem;
+    --aside-nav-height: 2.2rem;
   }
 
   body {
@@ -70,11 +72,11 @@
     font-family: var(--heading-font);
   }
 
-  main p {
+  p {
     font-family: var(--body-font);
     font-size: var(--font-size-base);
     max-width: 100ch;
-    margin: 0 auto;
+    margin: auto;
     padding-bottom: var(--spacing-md);
   }
 
@@ -93,7 +95,7 @@
   footer {
     background-color: var(--midnight);
     color: var(--frost-blue);
-    padding: var(--spacing-md) 0;
+    padding: var(--spacing-lg) 0;
     text-align: center;
   }
 
@@ -105,13 +107,6 @@
     color: var(--frost-blue);
   }
 
-  /* header p a{
-    text-decoration: none;
-    color: inherit;
-    font-size: var(--font-size-heading);
-    font-family: var(--heading-font);
-  } */
-
   nav {
     display: flex;
     justify-content: space-between;
@@ -121,19 +116,6 @@
 
 @layer layout {
   /* Add page-level layout and composition classes here. */
-
-  .nav-list {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    gap: var(--spacing-md);
-    font-family: var(--body-font);
-  }
-
-  .nav-list a {
-    text-decoration: none;
-    color: var(--frost-blue)
-  }
 
   .card-container {
     max-width: 1200px;
@@ -157,6 +139,7 @@
     max-width: 1200px;
     display: grid;
     grid-template-columns: 1fr 2fr;
+    grid-gap: var(--spacing-md);
     margin: auto;
   }
 }
@@ -164,23 +147,39 @@
 @layer components {
   /* Add reusable components such as buttons, cards, callouts, and forms here. */
 
+  .nav-list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    gap: var(--spacing-md);
+    font-family: var(--body-font);
+  }
+
+  .nav-list a {
+    text-decoration: none;
+    color: var(--frost-blue)
+  }
+
   .nav-title {
     text-decoration: none;
-    color: inherit;
+    color: var(--frost-blue);
     font-size: var(--font-size-heading);
     font-family: var(--heading-font);
+    margin-top: var(--spacing-sm);
   }
-  button {
+
+  .button {
     background-color: var(--icy-blue);
     color: var(--dark-blue);
     padding: var(--spacing-sm);
     border: none;
     font-family: var(--body-font);
     font-weight: var(--font-weight-bold);
+    border-radius: var(--button-radius);
   }
 
   .featured-card {
-    height: 300px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -198,7 +197,7 @@
     text-shadow: var(--dark-bg-shadow);
   }
 
-  form {
+  .comment-form {
     display: flex;
     flex-direction: column;
     max-width: 45%;
@@ -213,7 +212,7 @@
     font-family: var(--body-font);
   }
 
-  button[type="submit"] {
+  .submit {
     max-width: 15%;
     margin: var(--spacing-sm) auto;
   }
@@ -221,7 +220,11 @@
   .aside-nav {
     position: sticky;
     top: var(--spacing-md);
-    align-self: top;
+    align-self: start;
+  }
+
+  .aside-nav h2 {
+    margin-left: var(--spacing-lg);
   }
 
   .aside-nav-list {
@@ -232,6 +235,25 @@
   .aside-nav-list a{
     text-decoration: none;
     color: var(--medium-blue);
+    font-family: var(--body-font);
+  }
+
+  .media-object {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .media-figure img {
+    display: block;
+    border-radius: var(--border-radius);
+  }
+
+  .media-figure {
+    font-size: var(--font-size-base);
+    font-family: var(--body-font);
+    text-align: left;
   }
 }
 
@@ -246,16 +268,15 @@
     clip-path: inset(50%);
   }
 
-  .mt-btn {
-    margin-top: 12px;
-    width: 10%;
+  .text-left {
+    text-align: left;
   }
 
-  .hero-p {
+  .extra-margin {
     margin-top: 12px;
   }  
 
-  .comment-p {
+  .larger-base-text {
     font-size: 1.2rem; /* base font size makes the text feel like it gets lost, make it slightly larger to bring attention and clarity to the form "call-to-action". */
   }
 }
@@ -282,6 +303,11 @@
     color: var(--icy-blue);
     text-decoration: underline;
   }
+
+  .form-field:invalid {
+    border: 2px solid var(--warning);
+    border-radius: 4px;
+  }
 }
 
 @layer overrides {
@@ -290,15 +316,25 @@
 
 @media print {
   /* Add print improvements here. */
-  nav, footer, button {
+
+  /* For topics, glossary, and practice pages */
+  nav, footer, button, aside {
     display: none !important;
   }
 
-  .container {
+  .nav-title {
+    color: var(--midnight);
+  }
+
+  .container, body, main {
     font-size: 12pt;
     orphans: 3;
     background: transparent !important;
     width: 100% !important;
+  }
+
+  .main-grid {
+    display: flex;
   }
 
   img {
@@ -310,5 +346,23 @@
   h1, h2, h3 {
     page-break-after: avoid;
     break-after: avoid;
+  }
+}
+
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+  }
+  
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+
+  .media-object {
+    flex-direction: column;
   }
 }
