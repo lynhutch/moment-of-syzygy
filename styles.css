@@ -68,6 +68,11 @@
     max-width: 100%;
   }
 
+  main {
+    max-width: 1200px;
+    margin: auto;
+  }
+
   h1, h2, h3 {
     font-family: var(--heading-font);
   }
@@ -118,11 +123,11 @@
   /* Add page-level layout and composition classes here. */
 
   .card-container {
-    max-width: 1200px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: var(--spacing-md);
-    margin: auto;
+    container-type: inline-size;
+    container-name: card;
   }
 
   .container {
@@ -168,6 +173,10 @@
     margin-top: var(--spacing-sm);
   }
 
+  .menu-toggle {
+    display: none;
+  }
+
   .button {
     background-color: var(--icy-blue);
     color: var(--dark-blue);
@@ -180,13 +189,13 @@
 
   .featured-card {
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
     text-align: center;
     margin: auto;
-    padding: var(--spacing-md);
+    padding: var(--spacing-lg);
     background-color: var(--midnight);
     color: var(--frost-blue);
     border-radius: var(--border-radius);
@@ -195,6 +204,16 @@
   .featured-card h3 {
     font-size: 1.5rem;
     text-shadow: var(--dark-bg-shadow);
+  }
+
+
+  @container card (min-width: 888px) {
+    .featured-card {
+        padding: 1.5rem;
+    }
+    .featured-card h3 {
+        font-size: var(--font-size-heading);
+    }
   }
 
   .comment-form {
@@ -358,11 +377,17 @@
     grid-template-columns: 1fr;
   }
 
-  .card-container {
-    grid-template-columns: 1fr;
-  }
-
   .media-object {
     flex-direction: column;
+  }
+}
+
+@media (min-width: 888px) {
+  /* Fallback for container query */
+  .featured-card {
+    padding: 1.5rem;
+  }
+  .featured-card h3 {
+    font-size: var(--font-size-heading);
   }
 }
