@@ -216,13 +216,18 @@
   }
 
 
-  @container card (min-width: 888px) {
+  @container card (min-width: 782px) {
+    /* changes at wide width when there are three cards in a single row */
     .featured-card {
         padding-inline: 1.5rem;
         padding-block: 1.5rem;
     }
     .featured-card h3 {
         font-size: var(--font-size-heading);
+    }
+
+    .featured-card p {
+        font-size: 1.1rem;
     }
   }
 
