@@ -223,7 +223,7 @@
         padding-block: 1.5rem;
     }
     .featured-card h3 {
-        font-size: var(--font-size-heading);
+        font-size: 1.55rem;
     }
 
     .featured-card p {
