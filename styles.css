@@ -35,6 +35,14 @@
     --font-size-heading: 1.75rem;
     --font-size-subheading: 1.25rem;
 
+    --line-height-tight: ;
+    --line-height-normal: ;
+    --line-height-wide: ;
+
+    --line-length-short: ;
+    --line-length-normal: ;
+    --line-length-long: ;
+
 
     /* SPACING */
 
@@ -120,6 +128,12 @@
 
   nav {
     display: flex;
+  }
+
+  iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
   }
 }
 
