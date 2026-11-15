@@ -30,19 +30,25 @@
     --heading-font: "Bungee Hairline", Lucida, Monospace;
     --body-font: "Saira Semi Condensed", Verdana, sans-serif;
     --font-weight-bold: 700;
-    --font-size-base: 1rem;
-    --font-size-title: 2rem;
-    --font-size-heading: 1.75rem;
-    --font-size-subheading: 1.25rem;
+    --font-size-base: clamp(1rem, .35rem + 2vw, 1.15rem);
+    --font-size-title: clamp(2rem, .95rem + 2.6vw, 2.35rem);
+    --font-size-heading: clamp(1.75rem, .75rem + 2.4vw, 1.95rem);
+    --font-size-subheading: clamp(1.25rem, .55rem + 2.2vw, 1.5rem);
 
-    --line-height-tight: ;
-    --line-height-normal: ;
-    --line-height-wide: ;
+    --line-height-tight: 1.15rem;
+    --line-height-normal: 1.45rem;
+    --line-height-wide: 1.75rem;
 
-    --line-length-short: ;
-    --line-length-normal: ;
-    --line-length-long: ;
+    --line-length-short: 30ch;
+    --line-length-normal: 65ch;
+    --line-length-long: 100ch;
 
+    --tracking-tight: -.02em;
+    --tracking-normal: 0;
+    --tracking-wide: .04em;
+
+    --word-spacing-base: .05rem;
+    --word-spacing-wide: .5rem;
 
     /* SPACING */
 
@@ -87,6 +93,7 @@
     font-family: var(--heading-font);
     animation: slide 1s;
     text-shadow: var(--light-bg-shadow);
+    word-spacing: var(--word-spacing-wide);
   }
 
   p {
@@ -96,6 +103,7 @@
     margin-inline: auto;
     margin-block: auto;
     padding-block-end: var(--spacing-md);
+    word-spacing: var(--word-spacing-base);
   }
 
   h1 {
@@ -165,6 +173,12 @@
     margin-inline: auto;
     margin-block: auto;
   }
+
+  .main-grid p {
+    line-height: var(--line-height-wide);
+    max-inline-size: var(--line-length-long);
+    letter-spacing: var(--tracking-normal);
+  }
 }
 
 @layer components {
@@ -193,6 +207,7 @@
     margin-block-start: var(--spacing-sm);
     animation: slide 1s;
     text-shadow: var(--dark-bg-shadow);
+
   }
 
   .button {
@@ -204,6 +219,11 @@
     font-family: var(--body-font);
     font-weight: var(--font-weight-bold);
     border-radius: var(--button-radius);
+  }
+
+  .hero-text {
+    line-height: var(--line-height-wide);
+    max-inline-size: var(--line-length-long);
   }
 
   .featured-card {
@@ -227,8 +247,12 @@
   .featured-card h3 {
     font-size: 1.5rem;
     text-shadow: var(--dark-bg-shadow);
+    letter-spacing: var(--tracking-tight);
   }
 
+  .featured-card p {
+    line-height: var(--line-height-normal);
+  }
 
   @container card (min-width: 782px) {
     /* changes at wide width when there are three cards in a single row */
@@ -408,6 +432,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-sm);
+  }
+
+  main {
+        padding-inline-start: var(--spacing-md);
+        padding-inline-end: var(--spacing-md);
   }
 }
 
