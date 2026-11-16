@@ -1,4 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Hairline&family=Saira+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* Copyright 2016 The Saira Project Authors (omnibus.type@gmail.com), 
+with reserved font name "Saira".
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1 . 
+This license is copied below, and is also available with a FAQ at: https://openfontlicense.org  */
+@font-face {
+font-family: 'Saira Semi Condensed';
+src: url("./fonts/SairaSemiCondensed-Regular.ttf") format('truetype');
+font-weight: 400;
+font-style: normal;
+font-display: optional;
+}
+
+@font-face {
+font-family: 'Saira Semi Condensed';
+src: url("./fonts/SairaSemiCondensed-Bold.ttf") format('truetype');
+font-weight: 700;
+font-style: normal;
+font-display: optional;
+}
+
+/* Copyright 2023 The Bungee Project Authors (https://github.com/djrrb/Bungee)
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1 . 
+This license is copied below, and is also available with a FAQ at: https://openfontlicense.org  */
+@font-face {
+font-family: 'Bungee Hairline';
+src: url("./fonts/BungeeHairline-Regular.ttf") format('truetype');
+font-weight: 400;
+font-style: normal;
+font-display: swap;
+}
 
 @layer reset, base, layout, components, utilities, state, overrides;
 
@@ -15,6 +46,7 @@
 }
 
 @layer base {
+
   :root {
     /* Add design tokens here. */
 
@@ -27,8 +59,8 @@
     --warning: #880808;
 
     /* TYPE */
-    --heading-font: "Bungee Hairline", Lucida, Monospace;
-    --body-font: "Saira Semi Condensed", Verdana, sans-serif;
+    --heading-font: "Bungee Hairline", ui-monospace, "Liberation Mono", "Courier New", monospace;
+    --body-font: "Saira Semi Condensed", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --font-weight-bold: 700;
     --font-size-base: clamp(1rem, .35rem + 2vw, 1.15rem);
     --font-size-title: clamp(2rem, .95rem + 2.6vw, 2.35rem);
