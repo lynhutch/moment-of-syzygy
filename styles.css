@@ -8,7 +8,7 @@ font-family: 'Saira Semi Condensed';
 src: url("./fonts/SairaSemiCondensed-Regular.ttf") format('truetype');
 font-weight: 400;
 font-style: normal;
-font-display: optional;
+font-display: swap;
 }
 
 @font-face {
@@ -16,7 +16,7 @@ font-family: 'Saira Semi Condensed';
 src: url("./fonts/SairaSemiCondensed-Bold.ttf") format('truetype');
 font-weight: 700;
 font-style: normal;
-font-display: optional;
+font-display: swap;
 }
 
 /* Copyright 2023 The Bungee Project Authors (https://github.com/djrrb/Bungee)
@@ -360,6 +360,41 @@ font-display: swap;
     font-size: var(--font-size-base);
     font-family: var(--body-font);
     text-align: left;
+  }
+
+  .note {
+    display: flex;
+    flex-direction: column;
+    max-inline-size: 1200px;
+    margin-inline: auto;
+    padding: clamp(2rem, .95rem + 6vw, 6rem);
+    text-align: left;
+  }
+
+  .note-title {
+    font-size: var(--font-size-subheading);
+  }
+
+  .note-content {
+    font-size: clamp(.7rem, .35rem + 2vw, 1.05rem);
+    padding: 0;
+  }
+
+  .practice {
+    display: flex;
+    flex-direction: column;
+    max-inline-size: 1200px;
+    margin-inline: auto;
+    padding: clamp(var(--spacing-sm), 3vw, var(--spacing-md));
+    text-align: left;
+  }
+
+  .practice-check {
+    list-style: none;
+    line-height: var(--line-height-wide);
+    font-size: var(--font-size-base);
+    font-family: var(--body-font);
+    word-spacing: var(--word-spacing-base);
   }
 }
 
