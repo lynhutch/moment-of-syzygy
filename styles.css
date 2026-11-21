@@ -236,6 +236,7 @@ font-display: swap;
   }
 
   .nav-list a {
+    font-size: var(--font-size-base);
     text-decoration: none;
     color: var(--frost-blue)
   }
@@ -269,7 +270,6 @@ font-display: swap;
 
   .featured-card {
     inline-size: 100%;
-    min-inline-size: 250px;
     block-size: 100%;
     display: grid;
     grid-template-rows: subgrid;
