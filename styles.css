@@ -197,10 +197,6 @@ font-display: swap;
     container-name: card;
   }
 
-  .card-container a {
-    text-decoration: none;
-  }
-
   .container {
     display: flex;
     flex-direction: column;
@@ -291,6 +287,12 @@ font-display: swap;
     background-color: var(--midnight);
     color: var(--frost-blue);
     border-radius: var(--border-radius);
+  }
+
+  .featured-card a {
+    text-decoration: none;
+    max-inline-size: 100%;
+    margin-inline: auto;
   }
 
   .featured-card h3 {
