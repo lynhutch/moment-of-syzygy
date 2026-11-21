@@ -1,4 +1,4 @@
-<html lang="en">
+<!DOCTYPE html lang="en">
     <head>
         <title></title>
 
@@ -63,14 +63,14 @@
                 <h2>Have a Question or Comment?</h2>
                 <p class="larger-base-text">Let us know below!</p> 
                 <form id="user-comment" class="comment-form">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Your name..." class="form-field">
+                    <label for="name">Name<span>*</span></label>
+                    <input type="text" id="name" name="name" placeholder="Your name..." class="form-field" required pattern="[^0-9]*">
 
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Your email..." class="form-field">
+                    <label for="email">Email<span>*</span></label>
+                    <input type="email" id="email" name="email" placeholder="Your email..." class="form-field" required>
 
-                    <label for="comment">Comment</label>
-                    <textarea id="comment" name="comment" rows="6" cols="50" placeholder="Type your question or comment here..." class="form-field"></textarea>
+                    <label for="comment">Comment<span>*</span></label>
+                    <textarea id="comment" name="comment" rows="6" cols="50" placeholder="Type your question or comment here..." class="form-field" required minlength="10"></textarea>
                 </form>
 
                 <button type="submit" form="user-comment" class="button submit">Submit</button>
