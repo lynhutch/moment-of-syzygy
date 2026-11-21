@@ -359,7 +359,7 @@ font-display: swap;
 
   .aside-nav-list a{
     text-decoration: none;
-    color: var(--medium-blue);
+    color: var(--dark-blue);
     font-family: var(--body-font);
   }
 
