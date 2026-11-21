@@ -197,6 +197,10 @@ font-display: swap;
     container-name: card;
   }
 
+  .card-container a {
+    text-decoration: none;
+  }
+
   .container {
     display: flex;
     flex-direction: column;
