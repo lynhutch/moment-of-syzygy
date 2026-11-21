@@ -441,12 +441,12 @@ font-display: swap;
 
 
   button:focus-visible {
-    outline: var(--focus-width) solid var(--focus-color);
+    outline: var(--focus-width) solid var(--icy-blue);
   }
 
   button:hover {
     cursor: pointer;
-    background-color: var(--frost-blue);
+    background-color: var(--icy-blue);
     box-shadow: var(--dark-bg-shadow);
   }
 
