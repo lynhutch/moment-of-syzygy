@@ -550,6 +550,36 @@ font-display: swap;
     }
 }
 
+@media (max-width: 425px) {
+    .nav-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .submit {
+        max-inline-size: 30%;
+    }
+
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        grid-gap: var(--spacing-md);
+
+        align-items: stretch;
+        grid-auto-flow: dense;
+        grid-auto-rows: minmax(0, auto);
+    }
+
+    .main-grid {
+        padding-inline: 0;
+    }
+
+    img {
+        max-inline-size: 220px;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
