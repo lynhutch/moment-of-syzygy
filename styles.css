@@ -261,6 +261,9 @@ font-display: swap;
     font-family: var(--body-font);
     font-weight: var(--font-weight-bold);
     border-radius: var(--button-radius);
+    text-decoration: none;
+    max-inline-size: 100%;
+    margin-inline: auto;
   }
 
   .hero-text {
@@ -440,11 +443,11 @@ font-display: swap;
   }
 
 
-  button:focus-visible {
+  :focus-visible {
     outline: var(--focus-width) solid var(--icy-blue);
   }
 
-  button:hover {
+  .button:hover {
     cursor: pointer;
     background-color: var(--icy-blue);
     box-shadow: var(--dark-bg-shadow);
